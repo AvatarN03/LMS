@@ -53,7 +53,7 @@ const CategoryFilter = () => {
           filterOptions.map(option => (
             <button key={option.id}
               onClick={() => setActiveCategory(option.id)}
-              className={`px-4 py-2 m-1 bg-gray-200 rounded hover:bg-gray-300 ${activeCategory === option.id ? 'bg-purple-500 text-white hover:bg-purple-600' : ''}`}>
+              className={`px-4 py-2 m-1 dark:text-neutral-700 bg-gray-200 rounded hover:bg-gray-300 ${activeCategory === option.id ? 'bg-purple-500 text-white hover:bg-purple-600' : ''}`}>
               {option.title}
             </button>
           ))

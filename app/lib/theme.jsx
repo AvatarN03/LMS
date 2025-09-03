@@ -1,13 +1,8 @@
-"use client"
-import React, { useEffect, useState } from 'react'
-import SideBar from '../_components/SideBar'
-import Header from '../_components/Header'
+"use client";
+import { useEffect, useState } from "react";
 
-const homeLayout = ({ children }) => {
-
-
+export function useDarkMode() {
   const [darkMode, setDarkMode] = useState(false);
-
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -29,23 +24,7 @@ const homeLayout = ({ children }) => {
       localStorage.setItem("theme", "light");
     }
     setDarkMode(!darkMode);
-  }
+  };
 
-
-  return (
-    <>
-      <div className="dark:bg-slate-800 dark:text-white w-full min-h-screen">
-
-        <div className="h-full  w-64 shadow-lg fixed inset-y-0 flex flex-col z-50">
-          <SideBar />
-        </div>
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <div className="ml-64">
-          {children}
-        </div>
-      </div>
-    </>
-  )
+  return { darkMode, toggleDarkMode };
 }
-
-export default homeLayout

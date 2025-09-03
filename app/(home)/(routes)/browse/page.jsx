@@ -6,14 +6,14 @@ import CourseList from '../../_components/CourseList'
 
 const page = () => {
 
-  const [ courses, setCourses ] = useState([])
+  const [courses, setCourses] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     getCourses()
   }, [])
 
   const getCourses = async () => {
-    courseList().then((res)=> {
+    courseList().then((res) => {
       console.log(res)
       setCourses(res)
     }
@@ -22,10 +22,13 @@ const page = () => {
 
   return (
     <>
-     <CategoryFilter />
-     {
-      courses ? <CourseList courses={courses} /> : <p>Loading...</p>
-     }
+      <div className="w-full max-w-6xl mx-auto">
+
+        <CategoryFilter />
+        {
+          courses ? <CourseList courses={courses} /> : <p>Loading...</p>
+        }
+      </div>
     </>
   )
 }

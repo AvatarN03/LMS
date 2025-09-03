@@ -8,7 +8,7 @@ const CourseList = ({ courses }) => {
         <div className="p-5">
            
             <div className="mt-5 w-full grid grid-cols-1 
-            md:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4">
+            md:grid-cols-2 lg:grid-cols-3 gap-10 ">
 
                 {
                     courses.map((course) => (
@@ -29,7 +29,7 @@ const CourseList = ({ courses }) => {
                                     />
                                 </div>
                                 <h2 className="text-xl font-bold mb-2">{course.name}</h2>
-                                <h3 className='font-bold text-gray-500 text-sm'>{course.author}</h3>
+                                <h3 className='font-bold dark:text-slate-400 text-slate-600 text-sm'>{course.author}</h3>
 
                                 <div className="flex justify-start gap-2 my-2 items-center">
                                     <Book className='h-4 w-4 text-purple-600' />

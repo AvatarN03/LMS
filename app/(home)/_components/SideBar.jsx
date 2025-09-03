@@ -9,14 +9,14 @@ const SideBar = () => {
 
     const [active, setActive] = useState(1);
     const currentPath = usePathname();
-    
-    useEffect(()=>{
-       
+
+    useEffect(() => {
+
         const activeItem = menuList.find(item => item.path === currentPath);
         if (activeItem) {
             setActive(activeItem.id);
         }
-    },[])
+    }, [])
 
     const menuList = [
         {
@@ -47,14 +47,15 @@ const SideBar = () => {
     return (
         <div className="h-full flex flex-col overflow-y-auto shadow-md bg-slate-200 dark:bg-slate-900  border-r">
             <div className="p-5 shadow-lg">
-
-                <Image src="/logo.png" alt="logo" width={100} height={100} />
+                <Link href="/">
+                    <Image src="/logo.png" alt="logo" width={100} height={100} />
+                </Link>
             </div>
             <ul className="mt-10 flex flex-col gap-2 p-2 ">
                 {
                     menuList.map((item) => (
                         <Link href={item.path} key={item.id} onClick={() => setActive(item.id)}>
-                            <li key={item.id} className={`px-5 py-3  rounded text-slate-900 dark:text-white cursor-pointer flex items-center gap-3 ${active == item.id ? "bg-purple-300 text-purple-800 dark:text-black" : "hover:bg-slate-300 hover:dark:text-black/80"} `}>
+                            <li key={item.id} className={`px-5 py-3  rounded  cursor-pointer flex items-center gap-3 ${active == item.id ? "bg-purple-400 text-purple-800 dark:text-black" : "hover:bg-slate-300 hover:dark:text-black/80"} `}>
                                 {item.icon}
                                 <span>{item.name}</span>
                             </li>
