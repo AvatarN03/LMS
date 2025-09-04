@@ -21,15 +21,14 @@ const Enrollment = () => {
         }
     ]
     return (
-        <div className='flex justify-center gap-3 items-center'>
+        <div className='flex justify-evenly gap-4 items-center w-full'>
             {
                 optionList.map((option) => (
-                    <div key={option.id} className='flex items-center flex-col gap-2 border p-3 rounded-lg my-3 cursor-pointer hover:shadow-lg hover:bg-slate-500'>
-                        <div className='p-2 bg-gray-200 rounded-full dark:bg-slate-900 border-[.2px] border-slate-500'>
+                    <div key={option.id} className='flex items-center flex-col gap-2 border p-2 rounded-lg my-3 cursor-pointer hover:shadow-lg hover:bg-slate-500'>
+                        <div className='p-1 bg-gray-200 rounded-full dark:bg-slate-800 border-[.2px] border-slate-500'>
                             {option.icon}
-
                         </div>
-                        <p className='font-semibold'>{option.name}</p>
+                        <p className='font-semibold text-base'>{option.name}</p>
                     </div>
 
                 )

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  body  {
     @apply bg-white text-gray-900 transition-colors duration-200;
   }
   html.dark body {

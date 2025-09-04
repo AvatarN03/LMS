@@ -13,7 +13,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     }, [])
     return (
         <div className="h-24 w-full text-purple-800 transition-all shadow-lg dark:shadow-indigo-400">
-            <div className="flex justify-between items-center mx-auto max-w-5xl w-full h-full">
+            <div className="flex justify-between items-center mx-auto max-w-7xl w-full h-full">
                 <Link href={"/"}>
                     <Image src="/logo.png" alt="logo" width={100} height={40} />
                 </Link>
@@ -26,7 +26,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                                 <Sun />
                         }
                     </button>
-                        <Link href="/browse">
+                        <Link href="/dashboard">
                             <button className='bg-purple-400 rounded-md p-1 font-semibold hover:bg-purple-500 '>Dashboard</button>
                         </Link> 
                         

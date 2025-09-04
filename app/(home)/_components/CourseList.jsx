@@ -17,7 +17,7 @@ const CourseList = ({ courses }) => {
                             <div
                                 key={course.id}
                                 className="mb-4 p-4 border rounded-lg shadow-sm cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg 
-                                bg-neutral-300 dark:bg-slate-600  hover:-translate-y-2 dark:text-white hover:border-purple-500"
+                                bg-neutral-300 dark:bg-neutral-800  hover:-translate-y-2 dark:text-white hover:border-purple-500"
                             >
                                 <div className="w-full h-[180px] relative mb-4">
                                     <Image

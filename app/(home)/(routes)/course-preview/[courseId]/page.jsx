@@ -10,6 +10,7 @@ const CoursePreview = ({ params }) => {
 
   const [course, setCourse] = useState(null)
 
+
   const { courseId } = React.use(params)
 
   useEffect(() => {
@@ -26,21 +27,16 @@ const CoursePreview = ({ params }) => {
 
 
   return (
-    <div>
+    <div className='max-w-7xl mx-auto'>
 
       {
         course && (
-          <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
+          <div className='grid grid-cols-1 gap-8 md:grid-cols-3'>
             <div className="col-span-2">
-             
-             <VideoPlayer videoUrl={course.chapters.videoUrl.url} />
-
-             <CourseDetails course={course} />
-
-
+              <VideoPlayer videoUrl={course.chapters.videoUrl.url} />
             </div>
             <div className="p-2">
-              <Enrollment />
+              <CourseDetails course={course} />
             </div>
           </div>
         )

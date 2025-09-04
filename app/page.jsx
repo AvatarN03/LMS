@@ -9,22 +9,26 @@ const Page = () => {
 
 
   return (
-    <>   
+    <>
 
-      <section className='h-[50vh] p-5 w-full bg-indigo-300 dark:bg-indigo-700' >
+      <section className='h-[50vh] p-5 w-full bg-indigo-300 dark:bg-indigo-900' >
         <div className='mx-auto max-w-5xl h-full flex justify-center items-center gap-10'>
-          <div className="flex flex-col gap-3 ">
+          <div className="flex flex-col gap-8 ">
 
             <h1 className="text-6xl font-bold">
               Learn Without Limits with EduSphere
             </h1>
             <p className="">The most powerful learning platform that helps you achieve your goals with interactive courses from world-class instructors.</p>
-            <Link href="/browse">Get started</Link>
+            <Link href="/dashboard" className='bg-indigo-400 dark:hover:bg-indigo-200 dark:bg-indigo-600 p-3 shadow-md rounded-md w-auto text-center hover:bg-indigo-500'>
+              <button >
+                Get started
+              </button>
+            </Link>
           </div>
 
           <Image src="/image.png" alt="lms" width={500} height={500} />
         </div>
-      </section>
+      </section >
 
       <section className="w-full min-h-[60vh] py-12 px-4  max-w-6xl mx-auto">
         <div className="text-center">
@@ -32,18 +36,18 @@ const Page = () => {
           <p className="text-gray-600 text-sm my-3 mb-10">LMS provides everything you need to create, manage and track learning experiences.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, idx) =>  (
-                <div
-                  key={idx}
-                  className="p-6 bg-slate-200 dark:bg-gray-700 rounded-2xl shadow hover:shadow-lg dark:shadow-indigo-500 transition"
-                >
-                  <div className="flex items-center justify-center bg-slate-400 dark:bg-gray-800 w-12 h-12 rounded-full  mb-4">
-                    {feature.icon}
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                className="p-6 bg-slate-200 dark:bg-gray-700 rounded-2xl shadow hover:shadow-lg dark:shadow-indigo-500 transition"
+              >
+                <div className="flex items-center justify-center bg-slate-400 dark:bg-gray-800 w-12 h-12 rounded-full  mb-4">
+                  {feature.icon}
                 </div>
-                  <h3 className="text-lg font-semibold mb-2 -mt-4">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+                <h3 className="text-lg font-semibold mb-2 -mt-4">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
               </div>
-              )
+            )
             )}
           </div>
         </div>
