@@ -1,6 +1,6 @@
 "use client"
 import { UserButton, useUser } from '@clerk/nextjs'
-import { MoonIcon, Sun } from 'lucide-react'
+import { BookMarked, MoonIcon, Sun } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
@@ -13,9 +13,10 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     }, [])
     return (
         <div className="h-24 w-full text-purple-800 transition-all shadow-lg dark:shadow-indigo-400">
-            <div className="flex justify-between items-center mx-auto max-w-7xl w-full h-full">
-                <Link href={"/"}>
-                    <Image src="/logo.png" alt="logo" width={100} height={40} />
+            <div className="flex justify-between items-center mx-auto max-w-7xl w-full h-full px-4 py-2">
+                <Link href={"/"} className='text-blue-500 flex gap-1  items-center'>
+                    <BookMarked />
+                    <h2 className='text-2xl font-bold'>Edgine</h2>
                 </Link>
 
                 <div className="flex items-center gap-4">
@@ -26,12 +27,12 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                                 <Sun />
                         }
                     </button>
-                        <Link href="/dashboard">
-                            <button className='bg-purple-400 rounded-md p-1 font-semibold hover:bg-purple-500 '>Dashboard</button>
-                        </Link> 
-                        
+                    <Link href="/dashboard">
+                        <button className='bg-purple-400 rounded-md p-1 font-semibold hover:bg-purple-500 '>Dashboard</button>
+                    </Link>
 
-                    {user &&  <UserButton />  }
+
+                    {user && <UserButton />}
                 </div>
             </div>
         </div>

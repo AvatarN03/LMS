@@ -2,7 +2,7 @@ import { ArrowLeft } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-const VideoPlayer = ({ videoUrl }) => {
+const VideoPlayer = ({ video}) => {
   const router = useRouter()
 
   const handleBack = () => {
@@ -16,9 +16,12 @@ const VideoPlayer = ({ videoUrl }) => {
         <ArrowLeft />
       </button>
       <h2 className='text-gray-400 mb-3'>Course Preview</h2>
-      <video width="100%" height="250" controls controlsList='nodownload'>
-        <source src={videoUrl} type="video/mp4" />
-      </video>
+      {
+        video ?
+          <video width="100%" height="250" controls controlsList='nodownload'>
+            <source src={video.url} type="video/mp4" />
+          </video> :  <p className='text-center my-4 text-sm'>"No Demo Video"</p>
+      }
     </div>
   )
 }

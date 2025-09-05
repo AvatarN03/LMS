@@ -12,8 +12,11 @@ export default function ClientLayout({ children }) {
 
     return (
         <ClerkProvider signInUrl="/sign-in" signUpUrl="/sign-up">
-            <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            {children}
+            <main className="relative">
+
+                <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                {children}
+            </main>
         </ClerkProvider>
     );
 }

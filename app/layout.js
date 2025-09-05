@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "LMS in Nextjs",
+  title: "Edgine - LMS in Nextjs",
+   icons: {
+    icon: "/logo1.png",
+  },
   description: "LMS",
 };
 
